@@ -1,0 +1,14 @@
+{
+  "name": "pretty-selectors",
+  "version": "0.0.1",
+  "description": "Pretty selectors takes your ugly text and transforms it to nice CSS selectors",
+  "main": "lib/pretty-selectors.coffee",
+  "scripts": {
+    "test": "jasmine-node spec --coffee"
+  },
+  "author": "Petr Brzek",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
