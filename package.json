@@ -1,6 +1,6 @@
 {
   "name": "pretty-selectors",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Pretty selectors takes your ugly text and transforms it to nice CSS selectors",
   "main": "lib/pretty-selectors.coffee",
   "scripts": {
