@@ -14,18 +14,17 @@ Pretty Selectors
 ## Code example
 
     var PrettySelectors = require('pretty-selectors');
-    
-    var selector = PrettySelectors({text: 'Moje mama', 
-                                    separator: 'snake', 
-                                    selector: 'id', 
+
+    var selector = PrettySelectors('Moje mama', {separator: 'snake',
+                                    selector: 'id',
                                     maxWords: 3});
     // result: #moje_mama
-    
+
 ## Api
 
-    PrettySelectors(object)
-    
-### object.text (string, required)
+    PrettySelectors(text, object)
+
+### text (string, required)
 
 ### object.separator (string, optional, default: 'dash')
 
@@ -36,5 +35,3 @@ Options: dash, snake, camel
 Options: class, id, element
 
 ### object.maxWords (number, optional, default: 0 means no text stripping)
-  
-

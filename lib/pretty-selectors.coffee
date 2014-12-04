@@ -5,19 +5,18 @@ isNumber = (n) -> not isNaN(parseFloat(n)) and isFinite(n)
 instance = null
 
 # singleton
-PrettySelectors = (obj) ->
+PrettySelectors = (text, obj) ->
   instance ?= new Selectors()
-  instance.getObj(obj)
+  instance.init(text, obj)
   instance.doTasks()
   return instance.result()
 
 # class def
 class Selectors
-  getObj: (@config) ->
+  init: (@input, @config = {}) ->
     @config.separator ?= 'dash'
     @config.selector ?= 'class'
     @config.maxWords ?= 0
-    @input = @config.text
     @output = null
 
   doTasks: ->

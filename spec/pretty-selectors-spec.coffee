@@ -8,26 +8,26 @@ describe 'Transform boring text to beautiful CSS selectors', ->
     selector = null
 
   it 'should transform given text to a selector', ->
-    selector = PrettySelectors({ text: 'Moje mama', separator: 'snake', selector: 'id', maxWords: 3})
+    selector = PrettySelectors('Moje mama', { separator: 'snake', selector: 'id', maxWords: 3})
     expect(selector).toEqual('#moje_mama')
 
-    selector = PrettySelectors({text: '23456 ahoj'})
+    selector = PrettySelectors('23456 ahoj')
     expect(selector).toEqual('.ahoj')
 
-    selector = PrettySelectors({text: 'tomas je pan', separator: 'camel'})
+    selector = PrettySelectors('tomas je pan', {separator: 'camel'})
     expect(selector).toEqual('.tomasJePan')
 
-    selector = PrettySelectors({text: 'Tento text 666 a take 999', selector: 'element'})
+    selector = PrettySelectors('Tento text 666 a take 999', {selector: 'element'})
     expect(selector).toEqual('tento-text-666')
 
   it 'should return false', ->
-    selector = PrettySelectors({text: '900-800-700'})
+    selector = PrettySelectors('900-800-700')
     expect(selector).toEqual(null)
 
-    selector = PrettySelectors({text: '@#$$^^&&&'})
+    selector = PrettySelectors('@#$$^^&&&')
     expect(selector).toEqual(null)
 
-    selector = PrettySelectors({text: '$14.99'})
+    selector = PrettySelectors('$14.99')
     expect(selector).toEqual(null)
 
   it 'should return true for selector variable', ->
