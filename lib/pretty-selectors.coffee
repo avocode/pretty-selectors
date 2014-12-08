@@ -25,7 +25,12 @@ class Selectors
       do @clean if @arr isnt false
       do @cook if @arr isnt false
 
-    @output = null if @arr is false
+    if @arr is false
+      if @config.fallbackSelectorPrefix
+        @input = @config.fallbackSelectorPrefix
+        do @doTasks
+      else
+        @output = null
 
   tokenize: ->
     @arr = @input.match(/[a-z]+|[0-9]+/gi)
