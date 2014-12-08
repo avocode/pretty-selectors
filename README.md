@@ -35,3 +35,5 @@ Options: dash, snake, camel
 Options: class, id, element
 
 ### object.maxWords (number, optional, default: 0 means no text stripping)
+
+### object.fallbackSelectorPrefix (string, optional)
