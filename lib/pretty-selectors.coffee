@@ -17,6 +17,7 @@ class Selectors
     @config.separator ?= 'dash'
     @config.selector ?= 'class'
     @config.maxWords ?= 0
+    @config.fallbackSelectorPrefix ?= false
     @output = null
 
   doTasks: ->
@@ -37,9 +38,12 @@ class Selectors
     return @arr = false unless @arr
 
   clean: ->
-    while @arr.length
-      item = @arr[0]
-      if isNumber(item) is true then @arr.shift() else break
+    unless @config.fallbackSelectorPrefix
+      while @arr.length
+        item = @arr[0]
+        if isNumber(item) is true then @arr.shift() else break
+    else
+      @arr.unshift(@config.fallbackSelectorPrefix)
 
     result = []
     for item in @arr

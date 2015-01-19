@@ -30,9 +30,15 @@ describe 'Transform boring text to beautiful CSS selectors', ->
     selector = PrettySelectors('$14.99')
     expect(selector).toEqual(null)
 
+    selector = PrettySelectors('$14.99', fallbackSelectorPrefix: 'layer')
+    expect(selector).toEqual('.layer-14')
+
+    selector = PrettySelectors('666', fallbackSelectorPrefix: 'layer')
+    expect(selector).toEqual('.layer-666')
+
   it 'should return fallbackPrefix', ->
-    selector = PrettySelectors('$14.99', fallbackSelectorPrefix: 'layer 42')
-    expect(selector).toEqual('.layer-42')
+    selector = PrettySelectors('$14.99', fallbackSelectorPrefix: 'layer')
+    expect(selector).toEqual('.layer-14')
 
   it 'should return true for selector variable', ->
     expect(selector).toEqual(null)
