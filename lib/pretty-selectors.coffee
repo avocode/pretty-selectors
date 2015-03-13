@@ -38,12 +38,14 @@ class Selectors
     return @arr = false unless @arr
 
   clean: ->
-    unless @config.fallbackSelectorPrefix
-      while @arr.length
-        item = @arr[0]
-        if isNumber(item) is true then @arr.shift() else break
-    else
-      @arr.unshift(@config.fallbackSelectorPrefix)
+    firstItem = @arr[0]
+
+    while @arr.length
+      item = @arr[0]
+      if isNumber(item) is true then @arr.shift() else break
+
+    if @config.fallbackSelectorPrefix
+      @arr.push(@config.fallbackSelectorPrefix, firstItem) unless @arr.length
 
     result = []
     for item in @arr
