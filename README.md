@@ -1,7 +1,7 @@
 Pretty Selectors
 ================
 
-> Pretty selectors takes your ugly text and transforms it to nice CSS selectors
+> Pretty selectors take your ugly text and transform it to nice CSS selectors.
 
 ## Installation
 
@@ -24,16 +24,16 @@ Pretty Selectors
 
     PrettySelectors(text, object)
 
-### text (string, required)
+### text (string) – required
 
-### object.separator (string, optional, default: 'dash')
+### object.separator (string, default: 'dash') – optional
 
 Options: dash, snake, camel
 
-### object.selector (string, optional, default: 'class')
+### object.selector (string) – optional, default: 'class'
 
 Options: class, id, element
 
-### object.maxWords (number, optional, default: 0 means no text stripping)
+### object.maxWords (number) – optional, default: 0 means no text stripping
 
-### object.fallbackSelectorPrefix (string, optional)
+### object.fallbackSelectorPrefix (string) – optional
