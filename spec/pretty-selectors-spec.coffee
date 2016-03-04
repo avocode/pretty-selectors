@@ -1,4 +1,4 @@
-PrettySelectors = require '..'
+PrettySelectors = require '../src/pretty-selectors'
 
 describe 'Transform boring text to beautiful CSS selectors', ->
   selector = null

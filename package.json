@@ -4,11 +4,13 @@
   "description": "Pretty selectors take your ugly text and transform it to nice CSS selectors.",
   "main": "lib/pretty-selectors",
   "scripts": {
-    "test": "jasmine-node spec --coffee"
+    "test": "jasmine-node spec --coffee",
+    "prepublish": "coffee -o lib/ src/"
   },
   "author": "Petr Brzek",
   "license": "MIT",
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "jasmine-node": "^1.14.5",
+    "coffee-script": "^1.9.1"
   }
 }
